@@ -1,0 +1,2696 @@
+input AddAnswerToQuestionAnswersInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: AnswerInput
+}
+
+type AddAnswerToQuestionAnswersPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+  answers(first: Int, after: String, last: Int, before: String): AnswerConnection
+}
+
+input AddCommentToCommentCommentsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: CommentInput
+}
+
+type AddCommentToCommentCommentsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  created: Date
+  parent: Comment
+  post: Post
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+}
+
+input AddCommentToPostCommentsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: CommentInput
+}
+
+type AddCommentToPostCommentsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  title: String
+  author: User
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  picture: String
+}
+
+input AddCommentToUserCommentsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: CommentInput
+}
+
+type AddCommentToUserCommentsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  posts(first: Int, after: String, last: Int, before: String): PostConnection
+  reference: Reference
+}
+
+input AddEmbeddedToTestEmbeddedListInput {
+  clientMutationId: String!
+  id: ID!
+  entry: EmbeddedInput
+}
+
+type AddEmbeddedToTestEmbeddedListPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddEntryToTestEmbeddedMapInput {
+  clientMutationId: String!
+  id: ID!
+  entry: StringEmbeddedMapInput
+}
+
+type AddEntryToTestEmbeddedMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddEntryToTestReferenceMap1Input {
+  clientMutationId: String!
+  id: ID!
+  entry: StringStringMapInput
+}
+
+type AddEntryToTestReferenceMap1Payload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input AddEntryToTestReferenceMap2Input {
+  clientMutationId: String!
+  id: ID!
+  entryIds: TestReferenceTestReferenceMapInputIds
+  entry: TestReferenceTestReferenceMapInput
+}
+
+type AddEntryToTestReferenceMap2Payload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input AddEntryToTestReferenceMap3Input {
+  clientMutationId: String!
+  id: ID!
+  entryIds: StringTestReferenceMapInputIds
+  entry: StringTestReferenceMapInput
+}
+
+type AddEntryToTestReferenceMap3Payload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input AddEntryToTestReferenceMapInput {
+  clientMutationId: String!
+  id: ID!
+  entryIds: StringTestReferenceMapInputIds
+  entry: StringTestReferenceMapInput
+}
+
+type AddEntryToTestReferenceMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddEntryToTestRefRefMapInput {
+  clientMutationId: String!
+  id: ID!
+  entryIds: TestReferenceTestReferenceMapInputIds
+  entry: TestReferenceTestReferenceMapInput
+}
+
+type AddEntryToTestRefRefMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddEntryToTestStringMapInput {
+  clientMutationId: String!
+  id: ID!
+  entry: StringStringMapInput
+}
+
+type AddEntryToTestStringMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddPostToUserPostsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: PostInput
+}
+
+type AddPostToUserPostsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  posts(first: Int, after: String, last: Int, before: String): PostConnection
+  reference: Reference
+}
+
+input AddStringToTestStringListInput {
+  clientMutationId: String!
+  id: ID!
+  entry: String
+}
+
+type AddStringToTestStringListPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddStringToTestStringSetInput {
+  clientMutationId: String!
+  id: ID!
+  entry: String
+}
+
+type AddStringToTestStringSetPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddTestReferenceToTestReferenceListInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: TestReferenceInput
+}
+
+type AddTestReferenceToTestReferenceListPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddTestReferenceToTestReferenceSetInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: TestReferenceInput
+}
+
+type AddTestReferenceToTestReferenceSetPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input AddUserToRoleUsersInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+  entry: UserInput
+}
+
+type AddUserToRoleUsersPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  name: String
+  users: [User]
+}
+
+type Answer implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+}
+
+type AnswerConnection {
+  total: Int
+  edges: [AnswerEdge]
+  pageInfo: PageInfo!
+}
+
+type AnswerEdge {
+  cursor: String!
+  node: Answer
+}
+
+input AnswerFilter {
+  or: [AnswerFilter!]
+  and: [AnswerFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  author: ObjectFilter
+  text: StringFilter
+  upvotes: IntFilter
+}
+
+input AnswerInput {
+  id: ID
+  authorId: ID
+  author: UserInput
+  text: String
+  upvotes: Int
+}
+
+input AnswerSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  author: Direction
+  text: Direction
+  upvotes: Direction
+}
+
+input BooleanFilter {
+  eq: Boolean
+  ne: Boolean
+  in: [Boolean!]
+  nin: [Boolean!]
+  exists: Boolean
+}
+
+input CollectionFilter {
+  exists: Boolean
+}
+
+type Comment implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  created: Date
+  parent: Comment
+  post: Post
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+}
+
+type CommentConnection {
+  total: Int
+  edges: [CommentEdge]
+  pageInfo: PageInfo!
+}
+
+type CommentEdge {
+  cursor: String!
+  node: Comment
+}
+
+input CommentFilter {
+  or: [CommentFilter!]
+  and: [CommentFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  author: ObjectFilter
+  text: StringFilter
+  created: DateFilter
+  parent: ObjectFilter
+  post: ObjectFilter
+  comments: CollectionFilter
+}
+
+input CommentInput {
+  id: ID
+  authorId: ID
+  author: UserInput
+  text: String
+  created: Date
+  parentId: ID
+  parent: CommentInput
+  postId: ID
+  post: PostInput
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+}
+
+input CommentSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  author: Direction
+  text: Direction
+  created: Direction
+  parent: Direction
+  post: Direction
+  comments: Direction
+}
+
+input CreateAnswerInput {
+  clientMutationId: String!
+  id: ID
+  authorId: ID
+  author: UserInput
+  text: String
+  upvotes: Int
+}
+
+type CreateAnswerPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+}
+
+input CreateCommentInput {
+  clientMutationId: String!
+  id: ID
+  authorId: ID
+  author: UserInput
+  text: String
+  created: Date
+  parentId: ID
+  parent: CommentInput
+  postId: ID
+  post: PostInput
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+}
+
+type CreateCommentPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  created: Date
+  parent: Comment
+  post: Post
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+}
+
+input CreateDeviceInput {
+  clientMutationId: String!
+  id: ID
+  deviceOs: String
+}
+
+type CreateDevicePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  deviceOs: String
+}
+
+input CreatePostInput {
+  clientMutationId: String!
+  id: ID
+  title: String
+  authorId: ID
+  author: UserInput
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+  picture: String
+}
+
+type CreatePostPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  title: String
+  author: User
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  picture: String
+}
+
+input CreateQuestionInput {
+  clientMutationId: String!
+  id: ID
+  authorId: ID
+  author: UserInput
+  text: String
+  upvotes: Int
+  answersIds: [ID!]
+  answers: [AnswerInput!]
+}
+
+type CreateQuestionPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+  answers(first: Int, after: String, last: Int, before: String): AnswerConnection
+}
+
+input CreateReferenceInput {
+  clientMutationId: String!
+  id: ID
+  text: String
+}
+
+type CreateReferencePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  text: String
+}
+
+input CreateRoleInput {
+  clientMutationId: String!
+  id: ID
+  name: String
+  usersIds: [ID!]
+  users: [UserInput!]
+}
+
+type CreateRolePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  name: String
+  users: [User]
+}
+
+input CreateTestInput {
+  clientMutationId: String!
+  id: ID
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  referenceId: ID
+  reference: TestReferenceInput
+  embedded: EmbeddedInput
+  referenceListIds: [ID!]
+  referenceList: [TestReferenceInput!]
+  referenceSetIds: [ID!]
+  referenceSet: [TestReferenceInput!]
+  referenceMapIds: [StringTestReferenceMapInputIds!]
+  referenceMap: [StringTestReferenceMapInput!]
+  stringList: [String!]
+  stringSet: [String!]
+  stringMap: [StringStringMapInput!]
+  embeddedList: [EmbeddedInput!]
+  embeddedMap: [StringEmbeddedMapInput!]
+  refRefMapIds: [TestReferenceTestReferenceMapInputIds!]
+  refRefMap: [TestReferenceTestReferenceMapInput!]
+  geopoint: Geopoint
+}
+
+type CreateTestPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input CreateTestReferenceInput {
+  clientMutationId: String!
+  id: ID
+  string: String
+  referenceId: ID
+  reference: TestReferenceInput
+  map1: [StringStringMapInput!]
+  map2Ids: [TestReferenceTestReferenceMapInputIds!]
+  map2: [TestReferenceTestReferenceMapInput!]
+  map3Ids: [StringTestReferenceMapInputIds!]
+  map3: [StringTestReferenceMapInput!]
+}
+
+type CreateTestReferencePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input CreateUserInput {
+  clientMutationId: String!
+  id: ID
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+  postsIds: [ID!]
+  posts: [PostInput!]
+  referenceId: ID
+  reference: ReferenceInput
+}
+
+type CreateUserPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  posts(first: Int, after: String, last: Int, before: String): PostConnection
+  reference: Reference
+}
+
+# Date custom scalar type
+scalar Date
+
+input DateFilter {
+  eq: Date
+  ne: Date
+  in: [Date!]
+  nin: [Date!]
+  exists: Date
+  gt: Date
+  gte: Date
+  lt: Date
+  lte: Date
+}
+
+input DeleteAnswerInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteAnswerPayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteCommentInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteCommentPayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteDeviceInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteDevicePayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeletePostInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeletePostPayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteQuestionInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteQuestionPayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteReferenceInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteReferencePayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteRoleInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteRolePayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteTestInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteTestPayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteTestReferenceInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteTestReferencePayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+input DeleteUserInput {
+  clientMutationId: String!
+  id: ID!
+}
+
+type DeleteUserPayload {
+  clientMutationId: String!
+  id: ID!
+}
+
+type Device implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  deviceOs: String
+}
+
+type DeviceConnection {
+  total: Int
+  edges: [DeviceEdge]
+  pageInfo: PageInfo!
+}
+
+type DeviceEdge {
+  cursor: String!
+  node: Device
+}
+
+input DeviceFilter {
+  or: [DeviceFilter!]
+  and: [DeviceFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  deviceOs: StringFilter
+}
+
+input DeviceInput {
+  id: ID
+  deviceOs: String
+}
+
+input DeviceSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  deviceOs: Direction
+}
+
+enum Direction {
+  ASC
+  DESC
+}
+
+type Embedded {
+  string: String
+}
+
+type EmbeddedConnection {
+  total: Int
+  edges: [EmbeddedEdge]
+  pageInfo: PageInfo!
+}
+
+type EmbeddedEdge {
+  cursor: String!
+  node: Embedded
+}
+
+input EmbeddedFilter {
+  or: [EmbeddedFilter!]
+  and: [EmbeddedFilter!]
+  string: StringFilter
+}
+
+input EmbeddedInput {
+  string: String
+}
+
+input EmbeddedSortBy {
+  string: Direction
+}
+
+input FloatFilter {
+  eq: Float
+  ne: Float
+  in: [Float!]
+  nin: [Float!]
+  exists: Boolean
+  gt: Float
+  gte: Float
+  lt: Float
+  lte: Float
+}
+
+input Geometry {
+  coordinates: [Float]
+  type: GeometryType
+}
+
+enum GeometryType {
+  Point
+}
+
+# GeoPoint scalar type
+scalar Geopoint
+
+input GeoPointFilter {
+  nearSphere: NearSphereFilter
+}
+
+input IDFilter {
+  eq: String
+  ne: String
+  in: [String!]
+  nin: [String!]
+  exists: Boolean
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  regex: String
+}
+
+input IntFilter {
+  eq: Int
+  ne: Int
+  in: [Int!]
+  nin: [Int!]
+  exists: Boolean
+  gt: Int
+  gte: Int
+  lt: Int
+  lte: Int
+}
+
+# `JSON` scalar type
+scalar JSON
+
+input JSONFilter {
+  eq: JSON
+  ne: JSON
+  in: [JSON!]
+  nin: [JSON!]
+  exists: Boolean
+}
+
+type Mutation {
+  createTest(input: CreateTestInput): CreateTestPayload
+  updateTest(input: UpdateTestInput): UpdateTestPayload
+  deleteTest(input: DeleteTestInput): DeleteTestPayload
+  addTestReferenceToTestReferenceList(input: AddTestReferenceToTestReferenceListInput): AddTestReferenceToTestReferenceListPayload
+  removeTestReferenceFromTestReferenceList(input: RemoveTestReferenceFromTestReferenceListInput): RemoveTestReferenceFromTestReferenceListPayload
+  addTestReferenceToTestReferenceSet(input: AddTestReferenceToTestReferenceSetInput): AddTestReferenceToTestReferenceSetPayload
+  removeTestReferenceFromTestReferenceSet(input: RemoveTestReferenceFromTestReferenceSetInput): RemoveTestReferenceFromTestReferenceSetPayload
+  addEntryToTestReferenceMap(input: AddEntryToTestReferenceMapInput): AddEntryToTestReferenceMapPayload
+  removeEntryFromTestReferenceMap(input: RemoveEntryFromTestReferenceMapInput): RemoveEntryFromTestReferenceMapPayload
+  addStringToTestStringList(input: AddStringToTestStringListInput): AddStringToTestStringListPayload
+  removeStringFromTestStringList(input: RemoveStringFromTestStringListInput): RemoveStringFromTestStringListPayload
+  addStringToTestStringSet(input: AddStringToTestStringSetInput): AddStringToTestStringSetPayload
+  removeStringFromTestStringSet(input: RemoveStringFromTestStringSetInput): RemoveStringFromTestStringSetPayload
+  addEntryToTestStringMap(input: AddEntryToTestStringMapInput): AddEntryToTestStringMapPayload
+  removeEntryFromTestStringMap(input: RemoveEntryFromTestStringMapInput): RemoveEntryFromTestStringMapPayload
+  addEmbeddedToTestEmbeddedList(input: AddEmbeddedToTestEmbeddedListInput): AddEmbeddedToTestEmbeddedListPayload
+  removeEmbeddedFromTestEmbeddedList(input: RemoveEmbeddedFromTestEmbeddedListInput): RemoveEmbeddedFromTestEmbeddedListPayload
+  addEntryToTestEmbeddedMap(input: AddEntryToTestEmbeddedMapInput): AddEntryToTestEmbeddedMapPayload
+  removeEntryFromTestEmbeddedMap(input: RemoveEntryFromTestEmbeddedMapInput): RemoveEntryFromTestEmbeddedMapPayload
+  addEntryToTestRefRefMap(input: AddEntryToTestRefRefMapInput): AddEntryToTestRefRefMapPayload
+  removeEntryFromTestRefRefMap(input: RemoveEntryFromTestRefRefMapInput): RemoveEntryFromTestRefRefMapPayload
+  createQuestion(input: CreateQuestionInput): CreateQuestionPayload
+  updateQuestion(input: UpdateQuestionInput): UpdateQuestionPayload
+  deleteQuestion(input: DeleteQuestionInput): DeleteQuestionPayload
+  addAnswerToQuestionAnswers(input: AddAnswerToQuestionAnswersInput): AddAnswerToQuestionAnswersPayload
+  removeAnswerFromQuestionAnswers(input: RemoveAnswerFromQuestionAnswersInput): RemoveAnswerFromQuestionAnswersPayload
+  createComment(input: CreateCommentInput): CreateCommentPayload
+  updateComment(input: UpdateCommentInput): UpdateCommentPayload
+  deleteComment(input: DeleteCommentInput): DeleteCommentPayload
+  addCommentToCommentComments(input: AddCommentToCommentCommentsInput): AddCommentToCommentCommentsPayload
+  removeCommentFromCommentComments(input: RemoveCommentFromCommentCommentsInput): RemoveCommentFromCommentCommentsPayload
+  createDevice(input: CreateDeviceInput): CreateDevicePayload
+  updateDevice(input: UpdateDeviceInput): UpdateDevicePayload
+  deleteDevice(input: DeleteDeviceInput): DeleteDevicePayload
+  createTestReference(input: CreateTestReferenceInput): CreateTestReferencePayload
+  updateTestReference(input: UpdateTestReferenceInput): UpdateTestReferencePayload
+  deleteTestReference(input: DeleteTestReferenceInput): DeleteTestReferencePayload
+  addEntryToTestReferenceMap1(input: AddEntryToTestReferenceMap1Input): AddEntryToTestReferenceMap1Payload
+  removeEntryFromTestReferenceMap1(input: RemoveEntryFromTestReferenceMap1Input): RemoveEntryFromTestReferenceMap1Payload
+  addEntryToTestReferenceMap2(input: AddEntryToTestReferenceMap2Input): AddEntryToTestReferenceMap2Payload
+  removeEntryFromTestReferenceMap2(input: RemoveEntryFromTestReferenceMap2Input): RemoveEntryFromTestReferenceMap2Payload
+  addEntryToTestReferenceMap3(input: AddEntryToTestReferenceMap3Input): AddEntryToTestReferenceMap3Payload
+  removeEntryFromTestReferenceMap3(input: RemoveEntryFromTestReferenceMap3Input): RemoveEntryFromTestReferenceMap3Payload
+  createPost(input: CreatePostInput): CreatePostPayload
+  updatePost(input: UpdatePostInput): UpdatePostPayload
+  deletePost(input: DeletePostInput): DeletePostPayload
+  addCommentToPostComments(input: AddCommentToPostCommentsInput): AddCommentToPostCommentsPayload
+  removeCommentFromPostComments(input: RemoveCommentFromPostCommentsInput): RemoveCommentFromPostCommentsPayload
+  createReference(input: CreateReferenceInput): CreateReferencePayload
+  updateReference(input: UpdateReferenceInput): UpdateReferencePayload
+  deleteReference(input: DeleteReferenceInput): DeleteReferencePayload
+  createUser(input: CreateUserInput): CreateUserPayload
+  updateUser(input: UpdateUserInput): UpdateUserPayload
+  deleteUser(input: DeleteUserInput): DeleteUserPayload
+  addCommentToUserComments(input: AddCommentToUserCommentsInput): AddCommentToUserCommentsPayload
+  removeCommentFromUserComments(input: RemoveCommentFromUserCommentsInput): RemoveCommentFromUserCommentsPayload
+  addPostToUserPosts(input: AddPostToUserPostsInput): AddPostToUserPostsPayload
+  removePostFromUserPosts(input: RemovePostFromUserPostsInput): RemovePostFromUserPostsPayload
+  createAnswer(input: CreateAnswerInput): CreateAnswerPayload
+  updateAnswer(input: UpdateAnswerInput): UpdateAnswerPayload
+  deleteAnswer(input: DeleteAnswerInput): DeleteAnswerPayload
+  createRole(input: CreateRoleInput): CreateRolePayload
+  updateRole(input: UpdateRoleInput): UpdateRolePayload
+  deleteRole(input: DeleteRoleInput): DeleteRolePayload
+  addUserToRoleUsers(input: AddUserToRoleUsersInput): AddUserToRoleUsersPayload
+  removeUserFromRoleUsers(input: RemoveUserFromRoleUsersInput): RemoveUserFromRoleUsersPayload
+}
+
+input NearSphereFilter {
+  geometry: Geometry
+  maxDistance: Float
+}
+
+interface Node {
+  id: ID!
+}
+
+interface Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+}
+
+input ObjectFilter {
+  eq: String
+  ne: String
+  in: [String!]
+  nin: [String!]
+  exists: Boolean
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  regex: String
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type Post implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  title: String
+  author: User
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  picture: String
+}
+
+type PostConnection {
+  total: Int
+  edges: [PostEdge]
+  pageInfo: PageInfo!
+}
+
+type PostEdge {
+  cursor: String!
+  node: Post
+}
+
+input PostFilter {
+  or: [PostFilter!]
+  and: [PostFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  title: StringFilter
+  author: ObjectFilter
+  created: DateFilter
+  url: StringFilter
+  text: StringFilter
+  type: StringFilter
+  score: IntFilter
+  descendants: IntFilter
+  comments: CollectionFilter
+  picture: StringFilter
+}
+
+input PostInput {
+  id: ID
+  title: String
+  authorId: ID
+  author: UserInput
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+  picture: String
+}
+
+input PostSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  title: Direction
+  author: Direction
+  created: Direction
+  url: Direction
+  text: Direction
+  type: Direction
+  score: Direction
+  descendants: Direction
+  comments: Direction
+  picture: Direction
+}
+
+type Query {
+  node(id: ID!): Node
+  nodes(ids: [ID!]!): [Node]!
+  Test(id: ID!): Test
+  allTests(filter: TestFilter, sortBy: TestSortBy, first: Int, after: String, last: Int, before: String): TestConnection
+  Question(id: ID!): Question
+  allQuestions(filter: QuestionFilter, sortBy: QuestionSortBy, first: Int, after: String, last: Int, before: String): QuestionConnection
+  Comment(id: ID!): Comment
+  allComments(filter: CommentFilter, sortBy: CommentSortBy, first: Int, after: String, last: Int, before: String): CommentConnection
+  Device(id: ID!): Device
+  allDevices(filter: DeviceFilter, sortBy: DeviceSortBy, first: Int, after: String, last: Int, before: String): DeviceConnection
+  TestReference(id: ID!): TestReference
+  allTestReferences(filter: TestReferenceFilter, sortBy: TestReferenceSortBy, first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  Post(id: ID!): Post
+  allPosts(filter: PostFilter, sortBy: PostSortBy, first: Int, after: String, last: Int, before: String): PostConnection
+  Reference(id: ID!): Reference
+  allReferences(filter: ReferenceFilter, sortBy: ReferenceSortBy, first: Int, after: String, last: Int, before: String): ReferenceConnection
+  User(id: ID!): User
+  allUsers(filter: UserFilter, sortBy: UserSortBy, first: Int, after: String, last: Int, before: String): UserConnection
+  Answer(id: ID!): Answer
+  allAnswers(filter: AnswerFilter, sortBy: AnswerSortBy, first: Int, after: String, last: Int, before: String): AnswerConnection
+  Role(id: ID!): Role
+  allRoles(filter: RoleFilter, sortBy: RoleSortBy, first: Int, after: String, last: Int, before: String): RoleConnection
+  hello: String!
+}
+
+type Question implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+  answers(first: Int, after: String, last: Int, before: String): AnswerConnection
+}
+
+type QuestionConnection {
+  total: Int
+  edges: [QuestionEdge]
+  pageInfo: PageInfo!
+}
+
+type QuestionEdge {
+  cursor: String!
+  node: Question
+}
+
+input QuestionFilter {
+  or: [QuestionFilter!]
+  and: [QuestionFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  author: ObjectFilter
+  text: StringFilter
+  upvotes: IntFilter
+  answers: CollectionFilter
+}
+
+input QuestionInput {
+  id: ID
+  authorId: ID
+  author: UserInput
+  text: String
+  upvotes: Int
+  answersIds: [ID!]
+  answers: [AnswerInput!]
+}
+
+input QuestionSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  author: Direction
+  text: Direction
+  upvotes: Direction
+  answers: Direction
+}
+
+type Reference implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  text: String
+}
+
+type ReferenceConnection {
+  total: Int
+  edges: [ReferenceEdge]
+  pageInfo: PageInfo!
+}
+
+type ReferenceEdge {
+  cursor: String!
+  node: Reference
+}
+
+input ReferenceFilter {
+  or: [ReferenceFilter!]
+  and: [ReferenceFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  text: StringFilter
+}
+
+input ReferenceInput {
+  id: ID
+  text: String
+}
+
+input ReferenceSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  text: Direction
+}
+
+input RemoveAnswerFromQuestionAnswersInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemoveAnswerFromQuestionAnswersPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+  answers(first: Int, after: String, last: Int, before: String): AnswerConnection
+}
+
+input RemoveCommentFromCommentCommentsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemoveCommentFromCommentCommentsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  created: Date
+  parent: Comment
+  post: Post
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+}
+
+input RemoveCommentFromPostCommentsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemoveCommentFromPostCommentsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  title: String
+  author: User
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  picture: String
+}
+
+input RemoveCommentFromUserCommentsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemoveCommentFromUserCommentsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  posts(first: Int, after: String, last: Int, before: String): PostConnection
+  reference: Reference
+}
+
+input RemoveEmbeddedFromTestEmbeddedListInput {
+  clientMutationId: String!
+  id: ID!
+  entry: EmbeddedInput
+}
+
+type RemoveEmbeddedFromTestEmbeddedListPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveEntryFromTestEmbeddedMapInput {
+  clientMutationId: String!
+  id: ID!
+  entry: StringEmbeddedMapInput
+}
+
+type RemoveEntryFromTestEmbeddedMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveEntryFromTestReferenceMap1Input {
+  clientMutationId: String!
+  id: ID!
+  entry: StringStringMapInput
+}
+
+type RemoveEntryFromTestReferenceMap1Payload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input RemoveEntryFromTestReferenceMap2Input {
+  clientMutationId: String!
+  id: ID!
+  entryIds: TestReferenceTestReferenceMapInputIds
+}
+
+type RemoveEntryFromTestReferenceMap2Payload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input RemoveEntryFromTestReferenceMap3Input {
+  clientMutationId: String!
+  id: ID!
+  entryIds: StringTestReferenceMapInputIds
+}
+
+type RemoveEntryFromTestReferenceMap3Payload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input RemoveEntryFromTestReferenceMapInput {
+  clientMutationId: String!
+  id: ID!
+  entryIds: StringTestReferenceMapInputIds
+}
+
+type RemoveEntryFromTestReferenceMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveEntryFromTestRefRefMapInput {
+  clientMutationId: String!
+  id: ID!
+  entryIds: TestReferenceTestReferenceMapInputIds
+}
+
+type RemoveEntryFromTestRefRefMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveEntryFromTestStringMapInput {
+  clientMutationId: String!
+  id: ID!
+  entry: StringStringMapInput
+}
+
+type RemoveEntryFromTestStringMapPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemovePostFromUserPostsInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemovePostFromUserPostsPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  posts(first: Int, after: String, last: Int, before: String): PostConnection
+  reference: Reference
+}
+
+input RemoveStringFromTestStringListInput {
+  clientMutationId: String!
+  id: ID!
+  entry: String
+}
+
+type RemoveStringFromTestStringListPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveStringFromTestStringSetInput {
+  clientMutationId: String!
+  id: ID!
+  entry: String
+}
+
+type RemoveStringFromTestStringSetPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveTestReferenceFromTestReferenceListInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemoveTestReferenceFromTestReferenceListPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveTestReferenceFromTestReferenceSetInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemoveTestReferenceFromTestReferenceSetPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input RemoveUserFromRoleUsersInput {
+  clientMutationId: String!
+  id: ID!
+  entryId: ID
+}
+
+type RemoveUserFromRoleUsersPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  name: String
+  users: [User]
+}
+
+type Role implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  name: String
+  users: [User]
+}
+
+type RoleConnection {
+  total: Int
+  edges: [RoleEdge]
+  pageInfo: PageInfo!
+}
+
+type RoleEdge {
+  cursor: String!
+  node: Role
+}
+
+input RoleFilter {
+  or: [RoleFilter!]
+  and: [RoleFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  name: StringFilter
+  users: CollectionFilter
+}
+
+input RoleInput {
+  id: ID
+  name: String
+  usersIds: [ID!]
+  users: [UserInput!]
+}
+
+input RoleSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  name: Direction
+  users: Direction
+}
+
+type StringConnection {
+  total: Int
+  edges: [StringEdge]
+  pageInfo: PageInfo!
+}
+
+type StringEdge {
+  cursor: String!
+  node: String
+}
+
+type StringEmbeddedMapEntry {
+  key: String
+  value: Embedded
+}
+
+input StringEmbeddedMapInput {
+  key: String!
+  value: EmbeddedInput!
+}
+
+input StringFilter {
+  eq: String
+  ne: String
+  in: [String!]
+  nin: [String!]
+  exists: Boolean
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  regex: String
+}
+
+type StringStringMapEntry {
+  key: String
+  value: String
+}
+
+input StringStringMapInput {
+  key: String!
+  value: String!
+}
+
+type StringTestReferenceMapEntry {
+  key: String
+  value: TestReference
+}
+
+input StringTestReferenceMapInput {
+  key: String!
+  value: TestReferenceInput!
+}
+
+input StringTestReferenceMapInputIds {
+  key: String!
+  value: ID!
+}
+
+type Test implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+type TestConnection {
+  total: Int
+  edges: [TestEdge]
+  pageInfo: PageInfo!
+}
+
+type TestEdge {
+  cursor: String!
+  node: Test
+}
+
+input TestFilter {
+  or: [TestFilter!]
+  and: [TestFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  string: StringFilter
+  double: FloatFilter
+  integer: IntFilter
+  boolean: BooleanFilter
+  datetime: DateFilter
+  date: DateFilter
+  time: DateFilter
+  array: JSONFilter
+  json: JSONFilter
+  reference: ObjectFilter
+  embedded: EmbeddedFilter
+  referenceList: CollectionFilter
+  referenceSet: CollectionFilter
+  referenceMap: CollectionFilter
+  stringList: CollectionFilter
+  stringSet: CollectionFilter
+  stringMap: CollectionFilter
+  embeddedList: CollectionFilter
+  embeddedMap: CollectionFilter
+  refRefMap: CollectionFilter
+  geopoint: GeoPointFilter
+}
+
+input TestInput {
+  id: ID
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  referenceId: ID
+  reference: TestReferenceInput
+  embedded: EmbeddedInput
+  referenceListIds: [ID!]
+  referenceList: [TestReferenceInput!]
+  referenceSetIds: [ID!]
+  referenceSet: [TestReferenceInput!]
+  referenceMapIds: [StringTestReferenceMapInputIds!]
+  referenceMap: [StringTestReferenceMapInput!]
+  stringList: [String!]
+  stringSet: [String!]
+  stringMap: [StringStringMapInput!]
+  embeddedList: [EmbeddedInput!]
+  embeddedMap: [StringEmbeddedMapInput!]
+  refRefMapIds: [TestReferenceTestReferenceMapInputIds!]
+  refRefMap: [TestReferenceTestReferenceMapInput!]
+  geopoint: Geopoint
+}
+
+type TestReference implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+type TestReferenceConnection {
+  total: Int
+  edges: [TestReferenceEdge]
+  pageInfo: PageInfo!
+}
+
+type TestReferenceEdge {
+  cursor: String!
+  node: TestReference
+}
+
+input TestReferenceFilter {
+  or: [TestReferenceFilter!]
+  and: [TestReferenceFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  string: StringFilter
+  reference: ObjectFilter
+  map1: CollectionFilter
+  map2: CollectionFilter
+  map3: CollectionFilter
+}
+
+input TestReferenceInput {
+  id: ID
+  string: String
+  referenceId: ID
+  reference: TestReferenceInput
+  map1: [StringStringMapInput!]
+  map2Ids: [TestReferenceTestReferenceMapInputIds!]
+  map2: [TestReferenceTestReferenceMapInput!]
+  map3Ids: [StringTestReferenceMapInputIds!]
+  map3: [StringTestReferenceMapInput!]
+}
+
+input TestReferenceSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  string: Direction
+  reference: Direction
+  map1: Direction
+  map2: Direction
+  map3: Direction
+}
+
+type TestReferenceTestReferenceMapEntry {
+  key: TestReference
+  value: TestReference
+}
+
+input TestReferenceTestReferenceMapInput {
+  key: ID!
+  value: TestReferenceInput!
+}
+
+input TestReferenceTestReferenceMapInputIds {
+  key: ID!
+  value: ID!
+}
+
+input TestSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  string: Direction
+  double: Direction
+  integer: Direction
+  boolean: Direction
+  datetime: Direction
+  date: Direction
+  time: Direction
+  array: Direction
+  json: Direction
+  reference: Direction
+  embedded: Direction
+  referenceList: Direction
+  referenceSet: Direction
+  referenceMap: Direction
+  stringList: Direction
+  stringSet: Direction
+  stringMap: Direction
+  embeddedList: Direction
+  embeddedMap: Direction
+  refRefMap: Direction
+  geopoint: Direction
+}
+
+input UpdateAnswerInput {
+  clientMutationId: String!
+  id: ID!
+  authorId: ID
+  author: UserInput
+  text: String
+  upvotes: Int
+}
+
+type UpdateAnswerPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+}
+
+input UpdateCommentInput {
+  clientMutationId: String!
+  id: ID!
+  authorId: ID
+  author: UserInput
+  text: String
+  created: Date
+  parentId: ID
+  parent: CommentInput
+  postId: ID
+  post: PostInput
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+}
+
+type UpdateCommentPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  created: Date
+  parent: Comment
+  post: Post
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+}
+
+input UpdateDeviceInput {
+  clientMutationId: String!
+  id: ID!
+  deviceOs: String
+}
+
+type UpdateDevicePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  deviceOs: String
+}
+
+input UpdatePostInput {
+  clientMutationId: String!
+  id: ID!
+  title: String
+  authorId: ID
+  author: UserInput
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+  picture: String
+}
+
+type UpdatePostPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  title: String
+  author: User
+  created: Date
+  url: String
+  text: String
+  type: String
+  score: Int
+  descendants: Int
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  picture: String
+}
+
+input UpdateQuestionInput {
+  clientMutationId: String!
+  id: ID!
+  authorId: ID
+  author: UserInput
+  text: String
+  upvotes: Int
+  answersIds: [ID!]
+  answers: [AnswerInput!]
+}
+
+type UpdateQuestionPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  author: User
+  text: String
+  upvotes: Int
+  answers(first: Int, after: String, last: Int, before: String): AnswerConnection
+}
+
+input UpdateReferenceInput {
+  clientMutationId: String!
+  id: ID!
+  text: String
+}
+
+type UpdateReferencePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  text: String
+}
+
+input UpdateRoleInput {
+  clientMutationId: String!
+  id: ID!
+  name: String
+  usersIds: [ID!]
+  users: [UserInput!]
+}
+
+type UpdateRolePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  name: String
+  users: [User]
+}
+
+input UpdateTestInput {
+  clientMutationId: String!
+  id: ID!
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  referenceId: ID
+  reference: TestReferenceInput
+  embedded: EmbeddedInput
+  referenceListIds: [ID!]
+  referenceList: [TestReferenceInput!]
+  referenceSetIds: [ID!]
+  referenceSet: [TestReferenceInput!]
+  referenceMapIds: [StringTestReferenceMapInputIds!]
+  referenceMap: [StringTestReferenceMapInput!]
+  stringList: [String!]
+  stringSet: [String!]
+  stringMap: [StringStringMapInput!]
+  embeddedList: [EmbeddedInput!]
+  embeddedMap: [StringEmbeddedMapInput!]
+  refRefMapIds: [TestReferenceTestReferenceMapInputIds!]
+  refRefMap: [TestReferenceTestReferenceMapInput!]
+  geopoint: Geopoint
+}
+
+type UpdateTestPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  double: Float
+  integer: Int
+  boolean: Boolean
+  datetime: Date
+  date: Date
+  time: Date
+  array: JSON
+  json: JSON
+  reference: TestReference
+  embedded: Embedded
+  referenceList(first: Int, after: String, last: Int, before: String): TestReferenceConnection
+  referenceSet: [TestReference]
+  referenceMap: [StringTestReferenceMapEntry]
+  stringList(first: Int, after: String, last: Int, before: String): StringConnection
+  stringSet: [String]
+  stringMap: [StringStringMapEntry]
+  embeddedList(first: Int, after: String, last: Int, before: String): EmbeddedConnection
+  embeddedMap: [StringEmbeddedMapEntry]
+  refRefMap: [TestReferenceTestReferenceMapEntry]
+  geopoint: Geopoint
+}
+
+input UpdateTestReferenceInput {
+  clientMutationId: String!
+  id: ID!
+  string: String
+  referenceId: ID
+  reference: TestReferenceInput
+  map1: [StringStringMapInput!]
+  map2Ids: [TestReferenceTestReferenceMapInputIds!]
+  map2: [TestReferenceTestReferenceMapInput!]
+  map3Ids: [StringTestReferenceMapInputIds!]
+  map3: [StringTestReferenceMapInput!]
+}
+
+type UpdateTestReferencePayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  string: String
+  reference: TestReference
+  map1: [StringStringMapEntry]
+  map2: [TestReferenceTestReferenceMapEntry]
+  map3: [StringTestReferenceMapEntry]
+}
+
+input UpdateUserInput {
+  clientMutationId: String!
+  id: ID!
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+  postsIds: [ID!]
+  posts: [PostInput!]
+  referenceId: ID
+  reference: ReferenceInput
+}
+
+type UpdateUserPayload {
+  clientMutationId: String!
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  posts(first: Int, after: String, last: Int, before: String): PostConnection
+  reference: Reference
+}
+
+type User implements Node, Object {
+  id: ID!
+  version: Int
+  acl: JSON
+  createdAt: Date
+  updatedAt: Date
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  comments(first: Int, after: String, last: Int, before: String): CommentConnection
+  posts(first: Int, after: String, last: Int, before: String): PostConnection
+  reference: Reference
+}
+
+type UserConnection {
+  total: Int
+  edges: [UserEdge]
+  pageInfo: PageInfo!
+}
+
+type UserEdge {
+  cursor: String!
+  node: User
+}
+
+input UserFilter {
+  or: [UserFilter!]
+  and: [UserFilter!]
+  id: IDFilter
+  version: IntFilter
+  acl: JSONFilter
+  createdAt: DateFilter
+  updatedAt: DateFilter
+  username: StringFilter
+  email: StringFilter
+  name: StringFilter
+  inactive: BooleanFilter
+  comments: CollectionFilter
+  posts: CollectionFilter
+  reference: ObjectFilter
+}
+
+input UserInput {
+  id: ID
+  username: String
+  email: String
+  name: String
+  inactive: Boolean
+  commentsIds: [ID!]
+  comments: [CommentInput!]
+  postsIds: [ID!]
+  posts: [PostInput!]
+  referenceId: ID
+  reference: ReferenceInput
+}
+
+input UserSortBy {
+  id: Direction
+  version: Direction
+  acl: Direction
+  createdAt: Direction
+  updatedAt: Direction
+  username: Direction
+  email: Direction
+  name: Direction
+  inactive: Direction
+  comments: Direction
+  posts: Direction
+  reference: Direction
+}
+

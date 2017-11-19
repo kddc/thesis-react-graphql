@@ -1,0 +1,37 @@
+body {
+  background: #f6f6f6;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.app-header {
+  background: #333;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.app-nav > * {
+  padding: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.app-logo {
+  height: 32px;
+}
+
+.app-content {
+  padding: 16px;
+}
+
+.question-create {
+  padding: 16px 16px 0 16px;
+  background-color: white;
+}

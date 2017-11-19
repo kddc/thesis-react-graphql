@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border: 1px solid #e8e8e8;
+  background-color: #f8f8f8;
+  border-radius: 2px;
+  padding: 8px;
+  margin-bottom: 16px;
+  flex: 1;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+button {
+  height: 36px;
+  margin-left: 8px;
+  background: #1abd80;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  border: 2px solid #1abd80
+}
+
+button:hover {
+  background: #1abd80;
+  border-bottom: 2px solid #12875c
+}

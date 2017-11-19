@@ -1,0 +1,34 @@
+.answers {
+  margin-top: 8px;
+  padding: 16px;
+  padding-bottom: 0;
+  background: white;
+}
+
+.answer {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  border-top: 1px solid #e8e8e8;
+}
+
+.answer:first-child {
+  margin-top: 8px;
+}
+
+.answer .upvotes {
+  color: rgba(0,0,0,.5);
+  font-size: 18px;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.answer .content {
+  padding-left: 16px;
+}
+
+.answer .info {
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
