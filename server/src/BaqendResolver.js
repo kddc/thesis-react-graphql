@@ -91,7 +91,9 @@ class BaqendResolver {
     //   ],
     // }
     // return this.fetchEntities(type, extendenArgs, context)
-    return entities && this.loader[type].loadMany(entities).then(resolved => this.resolveList(resolved, args))
+    return entities && this.loader[type].loadMany(entities).then(resolved => {
+      return this.resolveList(resolved, args)
+    })
   }
 
   /**

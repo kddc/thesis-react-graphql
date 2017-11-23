@@ -5,7 +5,7 @@ let batchRequest = (db, type, keys) => {
     .resultList()
     .then(resultList => {
       return keys.map(key => {
-        return resultList.find(entity => key === entity.id) || null
+        return resultList.find(entity => key === entity.id).toJSON() || null
       })
     })
   // return Promise.all(keys.map((key) => {
